@@ -6,6 +6,7 @@
 
 ### Quick Sort
 * Best Case: $O(nlogn)$
+
 $$\begin{equation}\begin{aligned}
 T(n) &\le cn + 2T(n/2), c\, constant \\
 &\le cn + 2(cn/2+2T(n/4)) \\
@@ -14,13 +15,17 @@ T(n) &\le cn + 2T(n/2), c\, constant \\
 &\le cnlog_2n+nT(1) = O(nlogn)
 \end{aligned}
 \end{equation}$$
+
 * Worst Case: $O(n^2)$
 
 Worst Case happend on element arange in reverse order
+
 $$
 n + (n-1) + \cdots + 1 = \frac{n}{2}(n+1) = O(n^2)
 $$
+
 * Average Case: $O(nlogn)$
+
 $$
 T(n) = \underset{1 \le s\le n}{Ave}(T(s)+T(n-s)) + cn
 $$
@@ -34,22 +39,27 @@ $$
     \end{aligned}
 \end{equation}
 $$
+
 Because $T(0)=0$,
+
 $$
 T(n)=\frac{1}{n}(2T(1)+2T(2)+\cdots+2T(n-1)+T(n))+cn
 $$
 
 or,
+
 $$
 (n-1)T(n) = 2T(1)+2T(2)+\cdots+2T(n-1)+cn^2
 $$
 
 Therefore,
+
 $$(n-1)T(n)-(n-2)T(n-1)=2T(n-1)+c(2n-1)$$
 $$(n-1)T(n)-nT(n-1)=c(2n-1)$$
 $$\frac{T(n)}{n}=\frac{T(n-1)}{n-1}+c\left (\frac{1}{n}+\frac{1}{n-1}\right )$$
 
 We have,
+
 $$
 \begin{equation}
     \begin{aligned}
@@ -63,6 +73,7 @@ $$
 $$
 
 Finally, we have
+
 $$
 \begin{equation}
     \begin{aligned}
@@ -72,4 +83,5 @@ T(n)&=2cnH_n-c(n+1) \\
     \end{aligned}
 \end{equation}
 $$
+
 ### Heap Sort

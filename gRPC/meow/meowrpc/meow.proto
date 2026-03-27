@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "meow/meowrpc";
+
+package meowrpc;
+
+// A Cat live in RPC Server
+service MeowRPC {
+  // Echo Meow
+  rpc EchoMeow(Request) returns (Response) {}
+
+  // Echo Many Meow Meow
+  rpc ManyMeow(Request) returns (stream Response) {}
+
+  // Cat summarize your chi-chat and meow
+  rpc ImpatientMeow(stream Request) returns (Response) {}
+
+  // A clever cat talks to you rationally.
+  rpc Conversation(stream Request) returns (stream Response) {}
+}
+
+// The request message containing the user's name.
+message Request {
+  string message = 1;
+}
+
+// The response message containing the greetings
+message Response {
+  string message = 1;
+}
